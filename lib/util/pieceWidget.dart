@@ -8,19 +8,16 @@ class Piece extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: radius,
-      height: radius,
+      width: radius + 10,
+      height: radius + 10,
       child: Center(
         child: Text(
           level.round().toString(),
           style: TextStyle(
-            color: Colors.black,
-          ),
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
-      decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle),
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }
