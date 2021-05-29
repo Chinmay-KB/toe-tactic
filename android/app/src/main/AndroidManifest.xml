@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.toe_tactic">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="toe_tactic"
         android:icon="@mipmap/ic_launcher">

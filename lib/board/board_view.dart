@@ -10,7 +10,7 @@ class BoardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<BoardViewModel>.reactive(
       viewModelBuilder: () => BoardViewModel(),
-      onModelReady: (model) => model.init(),
+      onModelReady: (model) => model.init(context),
       builder: (
         BuildContext context,
         BoardViewModel model,
@@ -18,17 +18,6 @@ class BoardView extends StatelessWidget {
       ) {
         return SafeArea(
           child: Scaffold(
-            appBar: AppBar(
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: model.init,
-                    child: Icon(Icons.refresh),
-                  ),
-                ),
-              ],
-            ),
             body: model.isBusy
                 ? Center(child: CircularProgressIndicator())
                 : Center(

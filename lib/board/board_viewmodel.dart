@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:toe_tactic/result/results_view.dart';
 import 'package:toe_tactic/util/pieceWidget.dart';
 import 'package:toe_tactic/util/styleassets.dart';
 
@@ -13,13 +14,15 @@ class BoardViewModel extends BaseViewModel {
   var verticalWin = {'state': false, 'offset': 0};
   var horizontalWin = {'state': false, 'offset': 0};
   var diagonalWin = {'state': false, 'offset': 0};
+  BuildContext globalContext;
 
   List<Widget> get player1 => _player1;
   List<Widget> get player2 => _player2;
   List<DragTarget> get cells => _cells;
   int get playerTurn => _playerTurn;
 
-  void init() {
+  void init(BuildContext context) {
+    globalContext = context;
     setBusy(true);
     _playerTurn = 1;
     verticalWin = {'state': false, 'offset': 0};
@@ -126,6 +129,7 @@ class BoardViewModel extends BaseViewModel {
 
   checkIfWon() {
     // Checking for vertical win
+    int winner = -1;
     for (int i = 0; i < 3; i++) {
       if (_occupied[i]['player'] == _occupied[i + 3]['player'] &&
           _occupied[i]['player'] == _occupied[i + 6]['player'] &&
@@ -135,10 +139,10 @@ class BoardViewModel extends BaseViewModel {
             _occupied[i + 3]['player'].toString() +
             ' ' +
             _occupied[i + 6]['player'].toString());
+        winner = _occupied[i]['player'];
         verticalWin['state'] = true;
         verticalWin['offset'] = 2 * i + 1;
         notifyListeners();
-        return;
       }
     }
     // Checking horizontal win
@@ -146,13 +150,13 @@ class BoardViewModel extends BaseViewModel {
       if (_occupied[i]['player'] == _occupied[i + 1]['player'] &&
           _occupied[i]['player'] == _occupied[i + 2]['player'] &&
           _occupied[i]['player'] != -1) {
+        winner = _occupied[i]['player'];
         horizontalWin['state'] = true;
         if (i == 0) horizontalWin['offset'] = 1;
         if (i == 3) horizontalWin['offset'] = 3;
         if (i == 6) horizontalWin['offset'] = 5;
 
         notifyListeners();
-        return;
       }
     }
 
@@ -160,24 +164,39 @@ class BoardViewModel extends BaseViewModel {
     if (_occupied[0]['player'] == _occupied[4]['player'] &&
         _occupied[0]['player'] == _occupied[8]['player'] &&
         _occupied[0]['player'] != -1) {
+      winner = _occupied[0]['player'];
+
       diagonalWin['state'] = true;
       diagonalWin['offset'] = 1;
       notifyListeners();
-      return;
     }
     // Check win from top right
     if (_occupied[2]['player'] == _occupied[4]['player'] &&
         _occupied[2]['player'] == _occupied[6]['player'] &&
         _occupied[2]['player'] != -1) {
+      winner = _occupied[2]['player'];
       diagonalWin['state'] = true;
       diagonalWin['offset'] = -1;
       notifyListeners();
-      return;
     }
+    if (winner != -1) navigateToResult(winner);
   }
 
   togglePlayerTurn() {
     _playerTurn = _playerTurn == 1 ? 2 : 1;
     print(_playerTurn);
+  }
+
+  navigateToResult(int winner) async {
+    Map<String, dynamic> payload;
+    if (winner == 1) {
+      payload = {'player': 1, 'image': 'assets/player_1.jpg'};
+    } else
+      payload = {'player': 2, 'image': 'assets/player_2.png'};
+    Future.delayed(Duration(milliseconds: 600), () {
+      init(globalContext);
+      Navigator.of(globalContext)
+          .push(MaterialPageRoute(builder: (context) => ResultsView(payload)));
+    });
   }
 }
