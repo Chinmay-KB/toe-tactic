@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Piece extends StatelessWidget {
   final double radius;
@@ -13,11 +14,17 @@ class Piece extends StatelessWidget {
       child: Center(
         child: Text(
           level.round().toString(),
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+          style: GoogleFonts.merriweatherSans(
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
-      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+      decoration: BoxDecoration(
+          color: color.withOpacity(0.1 * level + 0.3), shape: BoxShape.circle),
     );
   }
 }
