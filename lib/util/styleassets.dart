@@ -1,13 +1,14 @@
 import 'dart:ui';
 
 class AppAssets {
-  static const COLOR_PRIMARY = Color(0xff72147e);
+  static const COLOR_PRIMARY = Color(0xff3C0B41);
   static const COLOR_PLAYER_1 = Color(0xfff21170);
   static const COLOR_PLAYER_2 = Color(0xfffdca40);
   static const COLOR_PIECE_INACTIVE = Color(0xfff5cebe);
   static const COLOR_PLAYER_TEXT = Color(0xff707070);
   static const COLOR_RESULTS_SCAFFOLD = Color(0xffffdbdb);
   static const COLOR_HOMESCREEN_ORANGE = Color(0xffFE5651);
+  static const COLOR_HOMESCREEN_BACKGROUND = Color(0xff3C0B41);
 
   static const INSTRUCTIONS =
       '''This game is a modified and more interesting version of the classic tic-tac-toe game that we as kids used to scribble at the back of our notebooks.\n

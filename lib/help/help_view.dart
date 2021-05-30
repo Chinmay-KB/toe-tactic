@@ -22,7 +22,7 @@ class HelpView extends StatelessWidget {
               fontWeight: FontWeight.w700,
               color: AppAssets.COLOR_HOMESCREEN_ORANGE),
         ),
-        backgroundColor: AppAssets.COLOR_PRIMARY,
+        backgroundColor: AppAssets.COLOR_HOMESCREEN_BACKGROUND,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -49,7 +49,7 @@ class HelpView extends StatelessWidget {
                   'Basic rules:',
                   textAlign: TextAlign.start,
                   style: GoogleFonts.getFont('Open Sans',
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
                       color: AppAssets.COLOR_HOMESCREEN_ORANGE),
                 ),
@@ -57,7 +57,7 @@ class HelpView extends StatelessWidget {
               Text(AppAssets.INSTRUCTIONS,
                   style: GoogleFonts.getFont(
                     'Open Sans',
-                    fontSize: 24,
+                    fontSize: 18,
                     color: AppAssets.COLOR_PRIMARY,
                   ))
             ],

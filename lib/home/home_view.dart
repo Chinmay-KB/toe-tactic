@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            color: AppAssets.COLOR_PRIMARY.withOpacity(1),
+            color: AppAssets.COLOR_HOMESCREEN_BACKGROUND.withOpacity(1),
             child: Opacity(
               opacity: 0.2,
               child: Image(
@@ -25,26 +25,13 @@ class HomeView extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment(-1.5, -1),
-            child: Text(
-              'T',
-              style: TextStyle(
-                  fontSize: 400, color: AppAssets.COLOR_PIECE_INACTIVE),
+            alignment: Alignment(-1, -0.7),
+            child: Image(
+              image: AssetImage('assets/home_ttt.png'),
             ),
           ),
           Align(
-            alignment: Alignment(-0.4, -0.34),
-            child: Text(
-              'oe\nac\nic',
-              style: TextStyle(
-                  fontSize: 48,
-                  color: AppAssets.COLOR_HOMESCREEN_ORANGE,
-                  letterSpacing: 4,
-                  fontWeight: FontWeight.w700),
-            ),
-          ),
-          Align(
-            alignment: Alignment(0, 0.1),
+            alignment: Alignment(0, 0.18),
             child: Text(
               'Tic tac toe with\nmore tactic',
               textAlign: TextAlign.center,
