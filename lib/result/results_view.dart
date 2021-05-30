@@ -101,7 +101,11 @@ class ResultsView extends StatelessWidget {
                                                   BorderRadius.circular(18.0),
                                               side: BorderSide(
                                                   color: Colors.white)))),
-                                  onPressed: () => Navigator.of(context).pop(),
+                                  onPressed: () {
+                                    int count = 0;
+                                    Navigator.of(context)
+                                        .popUntil((_) => count++ >= 2);
+                                  },
                                   child: Container(
                                     color: Colors.white,
                                     child: Padding(

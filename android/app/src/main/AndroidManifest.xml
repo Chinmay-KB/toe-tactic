@@ -2,7 +2,7 @@
     package="com.example.toe_tactic">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="toe_tactic"
+        android:label="Toe Tactic"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

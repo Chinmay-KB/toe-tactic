@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toe_tactic/board/board_view.dart';
+import 'package:toe_tactic/help/help_view.dart';
+import 'package:toe_tactic/home/home_view.dart';
 import 'package:toe_tactic/result/results_view.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
           textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme)),
-      home: BoardView(),
+      home: HomeView(),
     );
   }
 }
