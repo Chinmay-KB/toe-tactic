@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+ <img src="https://github.com/Chinmay-KB/toe-tactic/blob/master/Banner.png" alt="Project banner"></a>
 </p>
 <h3 align="center">Toe Tac Tic</h3>
 
@@ -8,15 +8,15 @@
 
 [![Hackathon](https://img.shields.io/badge/hackathon-name-orange.svg)](http://hackathon.url.com)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/Chinmay-KB/toe-tactic.svg)](https://github.com/Chinmay-KB/toe-tactic/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Chinmay-KB/toe-tactic.svg)](https://github.com/Chinmay-KB/toe-tactic/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
 </div>
 
 ---
 
-<p align="center"> Tic Tac Toe, but more TacTic
+<p align="center"> Tic Tac Toe, with more tactic
     <br> 
 </p>
 
@@ -35,89 +35,50 @@
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
 
-It is useful to design and follow a specific format when writing a problem statement. While there are several options
-for doing this, the following is a simple and straightforward template often used in Business Analysis to maintain
-focus on defining the problem.
+Tic Tac Toe is widely popular because of its minimal requirements, any piece of paper and a pen would do. Most of my notebooks in school had the grid drawn in the last pages, and most of yours must have had it too. But we cannot enjoy tic tac toe for long enough as it is solvable. The person who has the first turn can force a draw at least, if not a win. With our little game, we aim to take that advantage away and make it a bit more interesting, without making it too complicated.
 
-- IDEAL: This section is used to describe the desired or “to be” state of the process or product. At large, this section
-  should illustrate what the expected environment would look like once the solution is implemented.
-- REALITY: This section is used to describe the current or “as is” state of the process or product.
-- CONSEQUENCES: This section is used to describe the impacts on the business if the problem is not fixed or improved upon.
-  This includes costs associated with loss of money, time, productivity, competitive advantage, and so forth.
+## 💡 Idea / How to play <a name = "idea"></a>
 
-Following this format will result in a workable document that can be used to understand the problem and elicit
-requirements that will lead to a winning solution.
-
-## 💡 Idea / Solution <a name = "idea"></a>
-
-This section is used to describe potential solutions.
-
-Once the ideal, reality, and consequences sections have been
-completed, and understood, it becomes easier to provide a solution for solving the problem.
-
-## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
-
-- What are the dependencies of your project?
-- Describe each limitation in detailed but concise terms
-- Explain why each limitation exists
-- Provide the reasons why each limitation could not be overcome using the method(s) chosen to acquire.
-- Assess the impact of each limitation in relation to the overall findings and conclusions of your project, and if
-  appropriate, describe how these limitations could point to the need for further research.
+The plan
+- Each player has 6 pieces (or dots as we like to call them).
+- Each dot has a number assigned to it, 1 through 6.
+- Let us say a dot is placed on the grid anywhere, let the number of that dot be `x`. Now the opponent can overrule that dot and occupy the same dot if they place a dot with a higher number `y` such that `y>x`.
+- For eg- If player one has a dot of 3 in the center, player 2 can capture the center with a dot of 4 or higher.
+- Final aim remains the same, get three in a row!
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
-Write about what you could not develop during the course of the Hackathon; and about what your project can achieve
-in the future.
+We will be working on publishing it as a simple local multiplayer game and a bot mode too.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development
-and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+- Clone the repo `git clone https://github.com/Chinmay-KB/toe-tactic`
+- Run `cd toe-tactic`
+- Run `flutter pub get` to fetch all the dependencies
+- Run `flutter build apk --release` to get the release build
+- Connect your device and run `flutter run` for debugging the app on your device.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+Your 💓 for tic tac toe
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+- Download the release apk from here [release apk](https://github.com/Chinmay-KB/toe-tactic/blob/master/app-release.apk)
+- Install the apk. Play services may prompt you to not install the apk as it is not from playstore. Trust us and go ahead with the install 😉
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Flutter](https://www.flutter.dev) - App framework
+- [Adobe XD](https://www.adobe.com/in/products/xd.html) - Wireframing
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
-who participated in this project.
+- [Chinmay Kabi](https://github.com/Chinmay-KB) - Idea & developing the app.
+- [Sonali Sahoo](https://github.com/Sonali710) - Designs and assets
 
 ## 🎉 Acknowledgments <a name = "acknowledgments"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- [Misere tic tac toe](https://mindyourdecisions.com/blog/2016/11/01/the-best-first-move-in-misere-tic-tac-toe-3-in-a-row-is-losing-game-theory-tuesdays/) for getting us to thin of other ways we can make things interesting.
+- Our school boredom for making us play enough tic tac toe!
